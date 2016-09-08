@@ -3,11 +3,25 @@
 var sqlite3 =  require('sqlite3').verbose();
 
 function tDAO() {
-    var db =  new sqlite3.Database('./tweets.db');
+    var db =  new sqlite3.Database('./tweet1.sqlite');
+	const TWEET_TABLE = "tweetid1";
+	
+ //   this.addTweet = function(tweet) {
+       
+//		db.run("INSERT into" + TWEET_TABLE + "(test1) VALUES (val1,val2,val3)");
 
-    this.addTweet = function(tweet) {
-        db.run("INSERT into table_name(col1,col2,col3) VALUES (val1,val2,val3)");
-
+ //   }
+	
+	// not worried about asynchronous yet
+	this.selectAll = function() {
+         db.each("SELECT * FROM tweetid1", function (err, row) {
+			 if (err) {                
+			 console.log(err); 
+			 }			 
+		 console.log(row);
+  });
+s
+    
     }
 	
 	this.test = function() {
