@@ -8,7 +8,6 @@ function Tweet(date, text, author, replies, like) {
     this.tmessage = function() {return this.date + " " + this.text + " " + this.author + " " + replies + " " + like;};
 }
 
-
 function User(profile, name, tweets, followers, following, dms, retweets ) {
     this.profile = profile;
     this.name = name;
