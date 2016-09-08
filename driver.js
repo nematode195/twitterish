@@ -3,7 +3,9 @@
 var tDAO = require("./tsdao");
 var domain = require("./domain");
 
-var mytDAO = tDAO.create();
+var mytDAO = tDAO.create()
+
+
 
 var testMsg = mytDAO.test();
 
