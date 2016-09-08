@@ -8,20 +8,25 @@ function tDAO() {
 	
  //   this.addTweet = function(tweet) {
        
-//		db.run("INSERT into" + TWEET_TABLE + "(test1) VALUES (val1,val2,val3)");
+		db.run("INSERT into tweetid1('author') VALUES ('mike')");
 
  //   }
 	
 	// not worried about asynchronous yet
 	this.selectAll = function() {
-         db.each("SELECT * FROM tweetid1", function (err, row) {
+		try{
+         db.all("SELECT * FROM tweetid1", function (err, row) {
 			 if (err) {                
-			 console.log(err); 
+			 console.log("selectAll error" + err); 
 			 }			 
 		 console.log(row);
-  });
-s
-    
+		
+    });
+    }
+		 catch(er)
+		 {
+			console.log("caught error" + e);
+		 }
     }
 	
 	this.test = function() {

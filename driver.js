@@ -4,6 +4,8 @@ var tDAO = require("./tsdao");
 var domain = require("./domain");
 
 var mytDAO = tDAO.create()
+mytDAO.selectAll();
+
 
 
 
