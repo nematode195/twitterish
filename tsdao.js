@@ -6,27 +6,36 @@ function tDAO() {
     var db =  new sqlite3.Database('./tweet1.sqlite');
 	const TWEET_TABLE = "tweetid1";
 	
- //   this.addTweet = function(tweet) {
-       
-		db.run("INSERT into tweetid1('author') VALUES ('mike')");
-
- //   }
+ // not worried about asynchronous yet
+	this.addTweet = function(t) {
+		
+	     //db.all("INSERT INTO tweetid1(tid,date,text,author,replies,likes) VALUES(t.tid,t.date,t.text,t.author,t.replies,t.likes)", 
+		 
+		 var tidString = t.tid;
+		 console.log("tidString " + tidString);
+		 
+		 db.all('INSERT INTO tweetid1(tid,date,text,author,replies,likes) VALUES(?,?,?,?,?,?)', t.tid, t.date,t.text,t.author,t.replies, t.likes,
+		 //db.run('INSERT INTO tweetid1(tid,date,text,author,replies,likes) VALUES(? ,t.date,t.text,"he","he","he")', 
+		 
+		 function (err, row) {
+			 if (err) {                
+			 console.log("addTweet error" + err); 
+			 }			 
+		 console.log(row);
+		
+    });
+    }
 	
 	// not worried about asynchronous yet
 	this.selectAll = function() {
-		try{
-         db.all("SELECT * FROM tweetid1", function (err, row) {
+	     db.all("SELECT * FROM tweetid1", function (err, row) {
 			 if (err) {                
 			 console.log("selectAll error" + err); 
 			 }			 
 		 console.log(row);
 		
     });
-    }
-		 catch(er)
-		 {
-			console.log("caught error" + e);
-		 }
+    
     }
 	
 	this.test = function() {

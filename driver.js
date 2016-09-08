@@ -3,9 +3,14 @@
 var tDAO = require("./tsdao");
 var domain = require("./domain");
 
-var mytDAO = tDAO.create()
-mytDAO.selectAll();
+var mytDAO = tDAO.create();
 
+
+//function Tweet(date, text, author, replies, likes, tid)
+var testTweet = domain.createTweet("Feb02", "I love node", "Mike", "5", "0", "1");
+mytDAO.addTweet(testTweet)
+
+mytDAO.selectAll();
 
 
 
