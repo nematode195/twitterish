@@ -4,7 +4,7 @@ function Tweet(date, text, author, replies, like) {
     this.text = text;
     this.author = author;
     this.replies = replies;
-	this.like = like;
+	this.like = likes;
     this.tmessage = function() {return this.date + " " + this.text + " " + this.author + " " + replies + " " + like;};
 }
 
